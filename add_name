@@ -1,0 +1,6 @@
+#def add_name():
+#    outfile = open('philosophers.txt','a')
+#    outfile.write('Juliette Savarese\n')
+#    outfile.close()
+
+#add_name()
