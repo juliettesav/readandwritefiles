@@ -1,15 +1,19 @@
-import csv 
+import csv
 
-def main():
-    outfile = open('customer_country.csv','w')
-    outfile.write(record[1],record[2],record[4])
+infile = open('customers.csv','r')
+outfile = open('customers_country.csv','w')
 
-    csvfile = csv.reader(infile,delimiter=',')
-    next(csvfile) #to skip the header
+csvfile = csv.reader(infile,delimiter=',')
 
-    for record in csvfile: 
-        outfile.write(record[1],record[2],record[4])
+next(csvfile) #to skip the header
+outfile.write("Name, Country"+'\n')
 
-    outfile.close()
+for record in csvfile: 
+    
+    name=record[1]+' '+record[2]
+    country=record[4]
+    list=[name,country]
+    print(list)
+    outfile.write(name+', '+country+'\n')
 
-main()
+outfile.close()
